@@ -8,7 +8,7 @@ files:
   destination: /usr/share/nginx/html/
 hooks:
   BeforeInstall:
-    -source: scripts/install.sh
+    -location: scripts/install.sh
   AfterInstall:
-    -source: scripts/start.sh
+    -location: scripts/start.sh
 
