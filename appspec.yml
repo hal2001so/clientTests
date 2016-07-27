@@ -2,13 +2,13 @@ version: 0.0
 os: linux
 
 files:
-  -source: files/proxy.conf
-  destination: /etc/nginx/conf.d/
-  -source: files/staticserver.js
-  destination: /usr/share/nginx/html/
+  - source: files/proxy.conf
+    destination: /etc/nginx/conf.d/
+  - source: files/staticserver.js
+    destination: /usr/share/nginx/html/
 hooks:
   BeforeInstall:
-    -location: scripts/install.sh
+    - location: scripts/install.sh
   AfterInstall:
-    -location: scripts/start.sh
+    - location: scripts/start.sh
 
