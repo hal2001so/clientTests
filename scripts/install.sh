@@ -6,8 +6,12 @@ if [ -f /etc/nginx/nginx.conf ]
 then
   rm /etc/nginx/nginx.conf
 fi
-pid=$(ps -ef | grep node | grep static | awk '{print $2}')
-if [ -n "$pid"]
+if [ -f /usr/share/nginx/html/staticserver.js ]
+then
+  rm /usr/share/nginx/html/staticserver.js
+  fi
+pid=$(ps -ef | grep node | grep staticserver.js | grep nohup | awk '{print $2}')
+if [ -n "$pid" ]
 then
   kill $pid
 fi
