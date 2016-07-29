@@ -6,7 +6,7 @@ if [ -f /etc/nginx/nginx.conf ]
 then
   rm /etc/nginx/nginx.conf
 fi
-pid=$(ps -ef | grep nohup | grep static | awk '{print $2}')
+pid=$(ps -ef | grep node | grep static | awk '{print $2}')
 if [ -n "$pid"]
 then
   kill $pid
