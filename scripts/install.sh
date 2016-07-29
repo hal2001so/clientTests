@@ -7,7 +7,7 @@ then
   rm /etc/nginx/nginx.conf
 fi
 sudo $pid=$(ps -ef | grep nohup | grep static | awk '{print $2}')
-if [$pid > 0]
+if [$pid -gt 0]
 then
   kill $pid
 fi
