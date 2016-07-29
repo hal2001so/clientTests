@@ -1,8 +1,13 @@
 #!/bin/bash
 curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
-sudo yum -y install nodejs && sudo yum -y install nginx
-sudo service nginx stop
-rm /etc/nginx/nginx.conf
+yum -y install nodejs && sudo yum -y install nginx
+service nginx stop
+if [ -f /etc/nginx/nginx.conf]
+then
+  rm /etc/nginx/nginx.conf
+fi
 sudo $pid=$(ps -ef | grep nohup | grep static | awk '{print $2}')
-echo $pid
-kill $pid
+if [$pid > 0]
+then
+  kill $pid
+fi
